@@ -1,0 +1,2 @@
+#!/bin/bash
+python TwitterBackup.py $1 > archive-`date +%Y-%m-%d-%H:%M:%S`.json
