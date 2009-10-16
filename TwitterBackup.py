@@ -96,3 +96,10 @@ if __name__ == '__main__':
     
     archiver = TwitterArchiver(username, GetTwitterPassword(username))
     
+    res = {}
+    res['direct_messages'] = {}
+    res['direct_messages']['sent'] = archiver.fetchSentDMs()
+    res['direct_messages']['received'] = archiver.fetchReceivedDMs()
+    res['tweets'] = archiver.fetchTweets()
+    
+    simplejson.dump(res, sys.stdout)
