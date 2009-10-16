@@ -1,3 +1,4 @@
 #!/bin/bash
 echo "Backing up username '$1' into '$2'"
-python TwitterBackup.py "$1" > "${2}/archive-`date +%Y-%m-%d-%H:%M:%S`.json"
+_path=$(dirname $0)
+python "${_path}/TwitterBackup.py" "$1" > "${2}/archive-`date +%Y-%m-%d-%H:%M:%S`.json"
